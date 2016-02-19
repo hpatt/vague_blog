@@ -1,0 +1,31 @@
+<br>
+<p id="notice"><%= notice %></p>
+<div class="container">
+<b class="postheader"> Philosophy Posts</b>
+</div>
+<div class="container">
+  <table>
+    <tbody>
+      <hr>
+      <% @philpost.each do |post| %>
+        <div>
+          <b><%= post.title %></b>
+        </div>
+        <div class="container-fluid">
+          <%= simple_format(post.body) %>
+        </div>
+        <div class="tagcontainer">
+        <b>Tag:</b><span class="tags"><%= post.tag%></span>
+        </div>
+        <div class="btn-group" role="group" aria-label="...">
+          <%= link_to 'Show', post, class: "btn btn-primary" %>
+          <%= link_to 'Edit', edit_post_path(post), class: "btn btn-info" %>
+          <%= link_to 'Destroy', post, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+  			</div>
+        <br>
+      <br>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br>

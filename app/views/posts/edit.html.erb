@@ -1,0 +1,13 @@
+<br>
+<p id="notice"><%= notice %></p>
+<div class="container">
+<b class="postheader"> Edit Post</b>
+<br>
+<br>
+</div>
+<div class="container">
+  <%= render 'form' %>
+  <br>
+  <%= link_to 'Show', @post, class: "btn btn-primary" %> |
+  <%= link_to 'Back', posts_path, class: "btn btn-danger" %>
+</div>

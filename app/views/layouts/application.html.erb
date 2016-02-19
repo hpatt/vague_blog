@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DevSite</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container inner">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><b class="brandname"><span class="glyphicon glyphicon-leaf"></span> Everything Life</b></a>
+      </div>
+
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+          <li><%= link_to "New Post", new_post_path, {style: "color:white; font-family: 'Oswald', sans-serif;"} %></li>
+          <% end %>
+          <li><%= link_to "About Me", about_path, {style: "color: white; font-family: 'Oswald', sans-serif;"} %></li>
+          <% if !user_signed_in? %>
+          <li><%= link_to "Sign In", new_user_session_path, style:"color: white; font-family: 'Oswald', sans-serif;" %></li>
+          <% elsif user_signed_in? %>
+          <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete,style:"color: white; font-family: 'Oswald', sans-serif;" %></li>
+          <% end %>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+  <br>
+  <div class="container">
+      <h1 class="title">Vita Meo<span class="life">My Life</span></h1>
+      <br>
+
+  </div>
+  <div class="container">
+    <div class="col-xs-offset-.20 filter">
+      <table>
+        <div>
+          <tr class="links">
+            <td class="spacer"><%= link_to 'All', posts_path %></td>
+            <td class="spacer"><%= link_to 'Technology', '/technology' %></td>
+            <td class="spacer"><%= link_to 'Philosophy', '/philosophy' %></td>
+            <td class="spacer"><%= link_to 'Finance', '/finance' %></td>
+            <td class="spacer"><%= link_to 'Miscellaneous', '/miscellaneous' %></td>
+          </tr>
+        </div>
+      </table>
+    </div>
+  </div>
+  <div class="container">
+    <form class="navbar-form" role="search"> <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+      <div class="form-group"> <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+        <%= submit_tag "Search", class: "btn btn-primary btn-sm", :title => nil %>
+      </div>
+    </form>
+  </div>
+    <% end %>
+<%= yield %>
+
+</body>
+</html>

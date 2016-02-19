@@ -1,0 +1,121 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/*
+ * Globals
+ */
+
+/* Links */
+/* Posts styling */
+
+.tagcontainer {
+  margin-bottom: 5px;
+}
+.tags {
+  font-style: italic;
+}
+/* Posts styling */
+
+/* Edit Posts styling */
+
+/* Edit Posts styling */
+/* Nav styling Posts styling */
+
+/* Nav styling Posts styling */
+html,
+body {
+  min-height: 2000px;
+  padding-top: 25px;
+}
+
+.navbar-brand {
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: 5px;
+  margin-right: 25px;
+}
+.navbar-default.navbar-fixed-top {
+  padding-top: 5px;
+  border: none;
+  background: #303030;
+}
+@media (max-width: 750px) {
+  .spacer {
+    font-size: 11px;
+    font-weight:lighter;
+  }
+}
+.postheader {
+  border-bottom: solid thin;
+}
+.brandname {
+  color: white;
+}
+.brandname.drop {
+  color: black;
+}
+.glyphicon.glyphicon-pencil {
+  color: white;
+}
+.glyphicon.glyphicon-cog {
+  color: white;
+}
+.posts {
+  margin-left: 10px;
+}
+.post-shell {
+  margin-left: 10px;
+}
+.btn.btn-primary {
+  color: white;
+}
+.glyphicon.glyphicon-user {
+  color: white;
+  margin-right: 5px;
+}
+.glyphicon.glyphicon-cog {
+  margin-right: 5px;
+}
+.glyphicon.glyphicon-pencil {
+  margin-right: 5px;
+}
+.spacer {
+  padding-right: 10px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.title {
+  font-family: 'Oswald', sans-serif;
+  border-bottom: solid thick;
+}
+.life {
+  font-family: 'Oswald', sans-serif;
+  margin-left: 5px;
+  font-size: 15px;
+  font-style: italic;
+}
+.spacer.filter {
+  border-bottom: thick solid;
+}
+.technology-wrapper {
+  padding-top: 25px;
+}
+.btn-btn-link {
+  border-bottom: thick solid;
+}

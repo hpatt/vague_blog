@@ -1,0 +1,22 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Title:</strong>
+    <%= @post.title %>
+  </p>
+
+  <p>
+    <%= @post.body %>
+  </p>
+
+  <p>
+    <strong>Tag:</strong>
+    <%= @post.tag %>
+  </p>
+  <% if user_signed_in? %>
+  <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-info" %> |
+  <% end %>
+  <%= link_to 'Back', posts_path, class: "btn btn-danger" %>
+
+</div>
